@@ -137,7 +137,7 @@ public class SearchFragment extends Fragment implements BackPressedHandler,
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        app = WikipediaApp.getInstance();
+        app = WikipediaApp.instance;
 
         invokeSource = SearchInvokeSource.of(getArguments().getInt(ARG_INVOKE_SOURCE));
         query = getArguments().getString(ARG_QUERY);
@@ -153,7 +153,7 @@ public class SearchFragment extends Fragment implements BackPressedHandler,
 
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        app = WikipediaApp.getInstance();
+        app = WikipediaApp.instance;
         View view = inflater.inflate(R.layout.fragment_search, container, false);
         unbinder = ButterKnife.bind(this, view);
 
@@ -326,7 +326,7 @@ public class SearchFragment extends Fragment implements BackPressedHandler,
      */
     private void openSearch() {
         // create a new funnel every time Search is opened, to get a new session ID
-        funnel = new SearchFunnel(WikipediaApp.getInstance(), invokeSource);
+        funnel = new SearchFunnel(WikipediaApp.instance, invokeSource);
         funnel.searchStart();
         isSearchActive = true;
         Callback callback = callback();

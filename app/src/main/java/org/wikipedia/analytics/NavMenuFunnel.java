@@ -15,7 +15,7 @@ public class NavMenuFunnel extends Funnel {
     private static final String NAV_MENU_RANDOM = "Random";
 
     public NavMenuFunnel() {
-        super(WikipediaApp.getInstance(), SCHEMA_NAME, REV_ID, Funnel.SAMPLE_LOG_100);
+        super(WikipediaApp.instance, SCHEMA_NAME, REV_ID, Funnel.SAMPLE_LOG_100);
     }
 
     public void logFeed() {

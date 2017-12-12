@@ -47,7 +47,7 @@ public class OnThisDayCard extends Card {
     }
 
     @Override @NonNull public String title() {
-        return WikipediaApp.getInstance().getString(R.string.on_this_day_card_title);
+        return WikipediaApp.instance.getString(R.string.on_this_day_card_title);
     }
 
     @Override @NonNull public String subtitle() {

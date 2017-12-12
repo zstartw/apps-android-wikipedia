@@ -166,13 +166,13 @@ public final class L10nUtil {
     }
 
     private static Configuration getCurrentConfiguration() {
-        return new Configuration(WikipediaApp.getInstance().getResources().getConfiguration());
+        return new Configuration(WikipediaApp.instance.getResources().getConfiguration());
     }
 
     private static SparseArray<String> getTargetStrings(@StringRes int[] strings, Configuration altConfig) {
         SparseArray<String> localizedStrings = new SparseArray<>();
-        Resources targetResources = new Resources(WikipediaApp.getInstance().getResources().getAssets(),
-                                                  WikipediaApp.getInstance().getResources().getDisplayMetrics(),
+        Resources targetResources = new Resources(WikipediaApp.instance.getResources().getAssets(),
+                                                  WikipediaApp.instance.getResources().getDisplayMetrics(),
                                                   altConfig);
         for (int stringRes : strings) {
             localizedStrings.put(stringRes, targetResources.getString(stringRes));
@@ -185,8 +185,8 @@ public final class L10nUtil {
      * @param defaultConfig The original system configuration
      */
     private static void resetConfiguration(Configuration defaultConfig) {
-        new Resources(WikipediaApp.getInstance().getResources().getAssets(),
-                      WikipediaApp.getInstance().getResources().getDisplayMetrics(),
+        new Resources(WikipediaApp.instance.getResources().getAssets(),
+                      WikipediaApp.instance.getResources().getDisplayMetrics(),
                       defaultConfig);
     }
 
@@ -212,7 +212,7 @@ public final class L10nUtil {
         } else if (desiredLocale.getLanguage().equals(CHINESE_LANGUAGE_CODE)) {
             // create a new Locale object to manage only "zh" language code based on its app language
             // code. e.g.: search "HK" article in "zh-hant" or "zh-hans" will get "zh" language code
-            String appLanguageCode = WikipediaApp.getInstance().getAppLanguageCode();
+            String appLanguageCode = WikipediaApp.instance.getAppLanguageCode();
             if (appLanguageCode.equals(TRADITIONAL_CHINESE_LANGUAGE_CODE)) {
                 config.setLocale(TRADITIONAL_CHINESE);
             } else if (appLanguageCode.equals(SIMPLIFIED_CHINESE_LANGUAGE_CODE)) {

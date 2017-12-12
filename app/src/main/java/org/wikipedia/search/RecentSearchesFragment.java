@@ -61,7 +61,7 @@ public class RecentSearchesFragment extends Fragment implements LoaderManager.Lo
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int id) {
-                                        new DeleteAllRecentSearchesTask(WikipediaApp.getInstance()).execute();
+                                        new DeleteAllRecentSearchesTask(WikipediaApp.instance).execute();
                                     }
                                 })
                         .setNegativeButton(getString(R.string.clear_recent_searches_confirm_no), null)

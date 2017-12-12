@@ -13,11 +13,11 @@ public class AppLanguageSelectFunnel extends TimedFunnel {
     private final String previousLanguage;
 
     public AppLanguageSelectFunnel(boolean initiatedFromSearchBar) {
-        this(initiatedFromSearchBar, WikipediaApp.getInstance().getAppOrSystemLanguageCode());
+        this(initiatedFromSearchBar, WikipediaApp.instance.getAppOrSystemLanguageCode());
     }
 
     public AppLanguageSelectFunnel(boolean initiatedFromSearchBar, String previousLanguage) {
-        super(WikipediaApp.getInstance(), SCHEMA_NAME, REV_ID, Funnel.SAMPLE_LOG_100);
+        super(WikipediaApp.instance, SCHEMA_NAME, REV_ID, Funnel.SAMPLE_LOG_100);
         this.initiatedFromSearchBar = initiatedFromSearchBar;
         this.previousLanguage = previousLanguage;
     }

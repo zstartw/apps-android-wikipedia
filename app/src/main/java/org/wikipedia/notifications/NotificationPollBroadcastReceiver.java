@@ -74,7 +74,7 @@ public class NotificationPollBroadcastReceiver extends BroadcastReceiver {
                     // title into the corresponding human-readable label.
                     if (n.isFromWikidata() && n.title().isMainNamespace()) {
                         EntityClient.instance().getLabelForLang(n.title().full(),
-                                WikipediaApp.getInstance().getWikiSite().languageCode(),
+                                WikipediaApp.instance.getWikiSite().languageCode(),
                                 new EntityClient.LabelCallback() {
                                     @Override
                                     public void success(@NonNull String label) {

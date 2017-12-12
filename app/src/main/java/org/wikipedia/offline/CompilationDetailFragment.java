@@ -95,7 +95,7 @@ public class CompilationDetailFragment extends DownloadObserverFragment {
             }
         });
 
-        mainPageButton.setText(MainPageNameData.valueFor(WikipediaApp.getInstance().getAppLanguageCode()));
+        mainPageButton.setText(MainPageNameData.valueFor(WikipediaApp.instance.getAppLanguageCode()));
         updateDownloadState(true, null);
         return view;
     }
@@ -110,7 +110,7 @@ public class CompilationDetailFragment extends DownloadObserverFragment {
     @OnClick(R.id.button_compilation_detail_download) void onDownloadClick() {
         if (DeviceUtil.isOnline()) {
             if (!getDownloadObserver().isDownloading(compilation)) {
-                MediaDownloadReceiver.download(getContext(), compilation);
+                MediaDownloadReceiver.Companion.download(getContext(), compilation);
                 downloadPending = true;
                 updateDownloadState(true, null);
             }
@@ -122,7 +122,7 @@ public class CompilationDetailFragment extends DownloadObserverFragment {
     @OnClick(R.id.button_compilation_detail_main_page) void onMainPageClick() {
         try {
             PageTitle title = new PageTitle(OfflineManager.instance().getMainPageTitle(compilation),
-                    WikipediaApp.getInstance().getWikiSite());
+                    WikipediaApp.instance.getWikiSite());
 
             HistoryEntry entry = new HistoryEntry(title, HistoryEntry.SOURCE_MAIN_PAGE);
             startActivity(PageActivity.newIntentForNewTab(getContext(), entry, entry.getTitle()));

@@ -51,7 +51,7 @@ public class ConfigureFragment extends Fragment implements ConfigureItemView.Cal
         prepareContentTypeList();
         setupRecyclerView();
 
-        funnel = new FeedConfigureFunnel(WikipediaApp.getInstance(), WikipediaApp.getInstance().getWikiSite(),
+        funnel = new FeedConfigureFunnel(WikipediaApp.instance, WikipediaApp.instance.getWikiSite(),
                 getActivity().getIntent().getIntExtra(ConfigureActivity.INVOKE_SOURCE_EXTRA, -1));
         return view;
     }

@@ -46,7 +46,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         busMethods = new EventBusMethods();
-        WikipediaApp.getInstance().getBus().register(busMethods);
+        WikipediaApp.instance.getBus().register(busMethods);
 
         setTheme();
         removeSplashBackground();
@@ -57,7 +57,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         ActivityUtil.forceOverflowMenuIcon(this);
 
         // Conditionally execute all recurring tasks
-        new RecurringTasksExecutor(WikipediaApp.getInstance()).run();
+        new RecurringTasksExecutor(WikipediaApp.instance).run();
 
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         registerReceiver(networkStateReceiver, filter);
@@ -65,7 +65,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override protected void onDestroy() {
         unregisterReceiver(networkStateReceiver);
-        WikipediaApp.getInstance().getBus().unregister(busMethods);
+        WikipediaApp.instance.getBus().unregister(busMethods);
         busMethods = null;
         super.onDestroy();
     }
@@ -117,7 +117,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected void setTheme() {
-        setTheme(WikipediaApp.getInstance().getCurrentTheme().getResourceId());
+        setTheme(WikipediaApp.instance.getCurrentTheme().getResourceId());
     }
 
     protected void setSharedElementTransitions() {
@@ -214,7 +214,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         @Subscribe public void on(WikipediaZeroEnterEvent event) {
             if (Prefs.isZeroTutorialEnabled()) {
                 Prefs.setZeroTutorialEnabled(false);
-                WikipediaApp.getInstance().getWikipediaZeroHandler()
+                WikipediaApp.instance.getWikipediaZeroHandler()
                         .showZeroTutorialDialog(BaseActivity.this);
             }
         }

@@ -27,7 +27,7 @@ public class ExtendedBottomSheetDialogFragment extends BottomSheetDialogFragment
     @Override
     public void onDestroy() {
         super.onDestroy();
-        WikipediaApp.getInstance().getRefWatcher().watch(this);
+        WikipediaApp.instance.getRefWatcher().watch(this);
     }
 
     @Override

@@ -35,8 +35,8 @@ public class DownloadManagerObserver {
     private SparseArrayCompat<Long> downloadTimeMillis = new SparseArrayCompat<>();
 
     public void register(@NonNull Callback callback) {
-        downloadManager = (DownloadManager) WikipediaApp.getInstance().getSystemService(Context.DOWNLOAD_SERVICE);
-        handler = new Handler(WikipediaApp.getInstance().getMainLooper());
+        downloadManager = (DownloadManager) WikipediaApp.instance.getSystemService(Context.DOWNLOAD_SERVICE);
+        handler = new Handler(WikipediaApp.instance.getMainLooper());
         this.callback = callback;
         handler.postDelayed(pollRunnable, POLL_INTERVAL_MS);
     }

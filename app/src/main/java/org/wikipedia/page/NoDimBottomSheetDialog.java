@@ -26,7 +26,7 @@ public class NoDimBottomSheetDialog extends BottomSheetDialog {
     @Override
     public void onStop() {
         super.onStop();
-        WikipediaApp.getInstance().getRefWatcher().watch(this);
+        WikipediaApp.instance.getRefWatcher().watch(this);
     }
 
     protected void startExpanded() {

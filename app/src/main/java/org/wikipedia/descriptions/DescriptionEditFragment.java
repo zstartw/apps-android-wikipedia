@@ -59,7 +59,7 @@ public class DescriptionEditFragment extends Fragment {
                 Prefs.incrementTotalAnonDescriptionsEdited();
             }
             Prefs.setLastDescriptionEditTime(new Date().getTime());
-            WikipediaApp.getInstance().listenForNotifications();
+            WikipediaApp.instance.listenForNotifications();
 
             if (getActivity() == null)  {
                 return;
@@ -86,7 +86,7 @@ public class DescriptionEditFragment extends Fragment {
         DescriptionEditFunnel.Type type = pageTitle.getDescription() == null
                 ? DescriptionEditFunnel.Type.NEW
                 : DescriptionEditFunnel.Type.EXISTING;
-        funnel = new DescriptionEditFunnel(WikipediaApp.getInstance(), pageTitle, type);
+        funnel = new DescriptionEditFunnel(WikipediaApp.instance, pageTitle, type);
         funnel.logStart();
     }
 

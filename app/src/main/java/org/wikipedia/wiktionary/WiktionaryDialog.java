@@ -89,7 +89,7 @@ public class WiktionaryDialog extends ExtendedBottomSheetDialogFragment {
 
         loadDefinitions();
 
-        funnel = new WiktionaryDialogFunnel(WikipediaApp.getInstance(), selectedText);
+        funnel = new WiktionaryDialogFunnel(WikipediaApp.instance, selectedText);
 
         return rootView;
     }

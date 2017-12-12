@@ -59,7 +59,7 @@ public final class DateUtil {
         //       difficult for translators to write correct format specifiers without being able to
         //       test them. We should investigate localization support in date libraries such as
         //       Joda-Time and how TWN solves this classic problem.
-        DateFormat dateFormat = android.text.format.DateFormat.getMediumDateFormat(WikipediaApp.getInstance());
+        DateFormat dateFormat = android.text.format.DateFormat.getMediumDateFormat(WikipediaApp.instance);
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         return dateFormat.format(date);
     }
@@ -86,7 +86,7 @@ public final class DateUtil {
     }
 
     @NonNull public static String getYearDifferenceString(int year) {
-        Context context = WikipediaApp.getInstance().getApplicationContext();
+        Context context = WikipediaApp.instance.getApplicationContext();
         int diffInYears = Calendar.getInstance().get(Calendar.YEAR) - year;
         if (diffInYears == 0) {
             return context.getString(R.string.this_year);

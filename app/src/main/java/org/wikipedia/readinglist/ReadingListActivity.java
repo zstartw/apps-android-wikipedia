@@ -30,7 +30,7 @@ public class ReadingListActivity extends SingleFragmentActivity<ReadingListFragm
 
     @Override
     public ReadingListFragment createFragment() {
-        return ReadingListFragment
+        return ReadingListFragment.Companion
                 .newInstance(getIntent().getStringExtra(EXTRA_READING_LIST_TITLE));
     }
 }

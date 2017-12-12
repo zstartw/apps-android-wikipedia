@@ -103,11 +103,11 @@ public class CreateAccountActivity extends BaseActivity {
             }
         });
 
-        wiki = WikipediaApp.getInstance().getWikiSite();
+        wiki = WikipediaApp.instance.getWikiSite();
         createAccountInfoClient = new CreateAccountInfoClient();
         createAccountClient = new CreateAccountClient();
 
-        captchaHandler = new CaptchaHandler(this, WikipediaApp.getInstance().getWikiSite(),
+        captchaHandler = new CaptchaHandler(this, WikipediaApp.instance.getWikiSite(),
                 progressDialog, primaryContainer, getString(R.string.create_account_activity_title),
                 getString(R.string.create_account_button));
 
@@ -143,7 +143,7 @@ public class CreateAccountActivity extends BaseActivity {
             createAccountResult = savedInstanceState.getParcelable("result");
         }
 
-        funnel = new CreateAccountFunnel(WikipediaApp.getInstance(),
+        funnel = new CreateAccountFunnel(WikipediaApp.instance,
                 getIntent().getStringExtra(LOGIN_REQUEST_SOURCE));
 
         // Only send the editing start log event if the activity is created for the first time

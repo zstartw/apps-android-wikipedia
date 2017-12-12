@@ -294,7 +294,7 @@ public class PageActivity extends BaseActivity implements PageFragment.Callback,
 
     @NonNull
     public static Intent newIntent(@NonNull Context context, @NonNull String title) {
-        PageTitle pageTitle = new PageTitle(title, WikipediaApp.getInstance().getWikiSite());
+        PageTitle pageTitle = new PageTitle(title, WikipediaApp.instance.getWikiSite());
         return newIntentForNewTab(context, new HistoryEntry(pageTitle, HistoryEntry.SOURCE_INTERNAL_LINK), pageTitle);
     }
 

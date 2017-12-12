@@ -80,7 +80,7 @@ public class EditPreviewFragment extends Fragment {
 
         parentActivity = (EditSectionActivity)getActivity();
         PageTitle pageTitle = parentActivity.getPageTitle();
-        funnel = WikipediaApp.getInstance().getFunnelManager().getEditFunnel(pageTitle);
+        funnel = WikipediaApp.instance.getFunnelManager().getEditFunnel(pageTitle);
 
         /*
         Use a Resources object with a different Locale, so that the text of the canned summary
@@ -184,7 +184,7 @@ public class EditPreviewFragment extends Fragment {
         if (!isWebViewSetup) {
             isWebViewSetup = true;
             L10nUtil.setupDirectionality(parentActivity.getPageTitle().getWikiSite().languageCode(), Locale.getDefault().getLanguage(), bridge);
-            if (!WikipediaApp.getInstance().getCurrentTheme().isDefault()) {
+            if (!WikipediaApp.instance.getCurrentTheme().isDefault()) {
                 ThemeBridgeAdapter.setTheme(bridge);
             }
 

@@ -77,7 +77,7 @@ public final class DeviceUtil {
     }
 
     public static boolean isOnline() {
-        ConnectivityManager connManager = (ConnectivityManager) WikipediaApp.getInstance()
+        ConnectivityManager connManager = (ConnectivityManager) WikipediaApp.instance
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = connManager.getActiveNetworkInfo();
         return info != null && info.isConnected();

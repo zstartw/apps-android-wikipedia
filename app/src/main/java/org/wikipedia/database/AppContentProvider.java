@@ -112,10 +112,10 @@ public class AppContentProvider extends ContentProvider {
     }
 
     private SQLiteDatabase readableDatabase() {
-        return WikipediaApp.getInstance().getDatabase().getReadableDatabase();
+        return WikipediaApp.instance.getDatabase().getReadableDatabase();
     }
 
     private SQLiteDatabase writableDatabase() {
-        return WikipediaApp.getInstance().getDatabase().getWritableDatabase();
+        return WikipediaApp.instance.getDatabase().getWritableDatabase();
     }
 }

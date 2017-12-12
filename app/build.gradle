@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 import com.android.build.gradle.internal.dsl.ProductFlavor
 import com.android.ddmlib.DdmPreferences
@@ -208,8 +210,10 @@ dependencies {
     implementation "commons-io:commons-io:2.5"
     implementation 'org.jsoup:jsoup:1.10.2'
     implementation 'com.dmitrybrant:zimdroid:0.0.14'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.1.2"
 
-    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+    kapt "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+
 
     android.productFlavors.each { flavor ->
         String dep

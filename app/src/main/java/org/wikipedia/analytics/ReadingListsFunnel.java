@@ -13,11 +13,11 @@ public class ReadingListsFunnel extends Funnel {
     private static final int REV_ID = 15520526;
 
     public ReadingListsFunnel() {
-        super(WikipediaApp.getInstance(), SCHEMA_NAME, REV_ID);
+        super(WikipediaApp.instance, SCHEMA_NAME, REV_ID);
     }
 
     public ReadingListsFunnel(WikiSite wiki) {
-        super(WikipediaApp.getInstance(), SCHEMA_NAME, REV_ID, wiki);
+        super(WikipediaApp.instance, SCHEMA_NAME, REV_ID, wiki);
     }
 
     public void logAddClick(AddToReadingListDialog.InvokeSource source) {

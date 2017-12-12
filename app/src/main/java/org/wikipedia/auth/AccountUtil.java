@@ -202,7 +202,7 @@ public final class AccountUtil {
 
     @NonNull
     private static WikipediaApp app() {
-        return WikipediaApp.getInstance();
+        return WikipediaApp.instance;
     }
 
     private AccountUtil() { }

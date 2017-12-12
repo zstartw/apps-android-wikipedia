@@ -59,7 +59,7 @@ public class RandomItemFragment extends Fragment {
         imageView.setLegacyVisibilityHandlingEnabled(true);
         setContents(null);
 
-        new RandomSummaryClient().request(WikipediaApp.getInstance().getWikiSite(), new RandomSummaryClient.Callback() {
+        new RandomSummaryClient().request(WikipediaApp.instance.getWikiSite(), new RandomSummaryClient.Callback() {
             @Override
             public void onSuccess(@NonNull Call<RbPageSummary> call, @NonNull RbPageSummary pageSummary) {
                 if (!isAdded()) {
@@ -119,7 +119,7 @@ public class RandomItemFragment extends Fragment {
 
     @Nullable public PageTitle getTitle() {
         return summary == null ? null
-                : new PageTitle(summary.getTitle(), WikipediaApp.getInstance().getWikiSite());
+                : new PageTitle(summary.getTitle(), WikipediaApp.instance.getWikiSite());
     }
 
     private RandomFragment parent() {

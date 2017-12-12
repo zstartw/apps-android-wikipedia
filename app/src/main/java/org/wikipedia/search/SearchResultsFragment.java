@@ -91,7 +91,7 @@ public class SearchResultsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        app = WikipediaApp.getInstance();
+        app = WikipediaApp.instance;
     }
 
     @Override

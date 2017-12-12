@@ -208,6 +208,6 @@ public class ObservableWebView extends WebView {
                 listener.onContentHeightChanged(contentHeight);
             }
         }
-        WikipediaApp.getInstance().getBus().post(INVALIDATE_EVENT);
+        WikipediaApp.instance.getBus().post(INVALIDATE_EVENT);
     }
 }

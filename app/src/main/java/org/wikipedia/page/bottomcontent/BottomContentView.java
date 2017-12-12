@@ -157,7 +157,7 @@ public class BottomContentView extends LinearLayoutOverWebView
 
     public void setPage(@NonNull Page page) {
         this.page = page;
-        funnel = new SuggestedPagesFunnel(WikipediaApp.getInstance());
+        funnel = new SuggestedPagesFunnel(WikipediaApp.instance);
         firstTimeShown = false;
 
         setConditionalLayoutDirection(readMoreList, page.getTitle().getWikiSite().languageCode());

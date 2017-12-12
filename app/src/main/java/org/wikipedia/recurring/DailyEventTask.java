@@ -42,7 +42,7 @@ public class DailyEventTask extends RecurringTask {
     }
 
     private void logDailyEventReport() {
-        new DailyStatsFunnel(WikipediaApp.getInstance()).log(WikipediaApp.getInstance());
+        new DailyStatsFunnel(WikipediaApp.instance).log(WikipediaApp.instance);
     }
 
     private boolean isDailyEventDue(Date lastRun) {

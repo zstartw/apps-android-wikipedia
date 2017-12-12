@@ -179,9 +179,9 @@ public final class ReadingListPageDao extends BaseDao<ReadingListPageRow> {
     // TODO: expose HTTP DAO methods.
 
     private ReadingListPageDao() {
-        super(WikipediaApp.getInstance().getDatabaseClient(ReadingListPageRow.class));
-        httpDao = new HttpRowDao<>(WikipediaApp.getInstance().getDatabaseClient(ReadingListPageHttpRow.class));
-        diskDao = new DiskRowDao<>(WikipediaApp.getInstance().getDatabaseClient(ReadingListPageDiskRow.class));
+        super(WikipediaApp.instance.getDatabaseClient(ReadingListPageRow.class));
+        httpDao = new HttpRowDao<>(WikipediaApp.instance.getDatabaseClient(ReadingListPageHttpRow.class));
+        diskDao = new DiskRowDao<>(WikipediaApp.instance.getDatabaseClient(ReadingListPageDiskRow.class));
     }
 
     @VisibleForTesting static class Sql {

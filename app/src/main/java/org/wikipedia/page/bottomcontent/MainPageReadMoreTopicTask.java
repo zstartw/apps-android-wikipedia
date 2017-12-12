@@ -45,7 +45,7 @@ public class MainPageReadMoreTopicTask extends SaneAsyncTask<HistoryEntry> {
     }
 
     private Cursor getInterestedHistoryEntry() {
-        Context context = WikipediaApp.getInstance();
+        Context context = WikipediaApp.instance;
         ContentProviderClient client = HistoryEntry.DATABASE_TABLE.acquireClient(context);
         try {
             Uri uri = PageHistoryContract.PageWithImage.URI;

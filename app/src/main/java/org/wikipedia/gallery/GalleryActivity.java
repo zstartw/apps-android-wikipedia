@@ -77,7 +77,7 @@ public class GalleryActivity extends BaseActivity implements LinkPreviewDialog.C
     public static final String EXTRA_FEATURED_IMAGE = "featuredImage";
     public static final String EXTRA_FEATURED_IMAGE_AGE = "featuredImageAge";
 
-    @NonNull private WikipediaApp app = WikipediaApp.getInstance();
+    @NonNull private WikipediaApp app = WikipediaApp.instance;
     @NonNull private ExclusiveBottomSheetPresenter bottomSheetPresenter = new ExclusiveBottomSheetPresenter();
     @Nullable private PageTitle pageTitle;
     @Nullable private WikiSite wiki;
@@ -286,7 +286,7 @@ public class GalleryActivity extends BaseActivity implements LinkPreviewDialog.C
     @Override
     public void onDownload(@NonNull GalleryItem item) {
         funnel.logGallerySave(pageTitle, item.getName());
-        downloadReceiver.download(this, item);
+        downloadReceiver.Companion.download(this, item);
         FeedbackUtil.showMessage(this, R.string.gallery_save_progress);
     }
 

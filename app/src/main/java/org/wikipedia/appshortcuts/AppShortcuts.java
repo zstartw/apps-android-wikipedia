@@ -21,7 +21,7 @@ public class AppShortcuts {
     private WikipediaApp app;
 
     public AppShortcuts() {
-        app = WikipediaApp.getInstance();
+        app = WikipediaApp.instance;
     }
 
     @TargetApi(android.os.Build.VERSION_CODES.N_MR1)

@@ -49,7 +49,7 @@ public class DescriptionEditClient {
     }
 
     private static boolean isLanguageBlacklisted(@NonNull String lang) {
-        JSONArray blacklist = WikipediaApp.getInstance().getRemoteConfig().getConfig()
+        JSONArray blacklist = WikipediaApp.instance.getRemoteConfig().getConfig()
                 .optJSONArray("descriptionEditLangBlacklist");
         if (blacklist != null) {
             for (int i = 0; i < blacklist.length(); i++) {

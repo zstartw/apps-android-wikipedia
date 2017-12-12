@@ -27,7 +27,7 @@ import static org.mockito.Mockito.verify;
 
 public class ZeroConfigClientTest extends MockWebServerTest {
     @NonNull private ZeroConfigClient client = new ZeroConfigClient();
-    @NonNull private static String USER_AGENT = WikipediaApp.getInstance().getUserAgent();
+    @NonNull private static String USER_AGENT = WikipediaApp.instance.getUserAgent();
 
     @Test public void testRequestEligible() throws Throwable {
         enqueueFromFile("wikipedia_zero_test_eligible.json");

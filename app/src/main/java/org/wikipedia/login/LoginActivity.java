@@ -111,7 +111,7 @@ public class LoginActivity extends BaseActivity {
         progressDialog.setMessage(getString(R.string.login_in_progress_dialog_message));
         progressDialog.setCancelable(false);
 
-        funnel = new LoginFunnel(WikipediaApp.getInstance());
+        funnel = new LoginFunnel(WikipediaApp.instance);
 
         loginSource = getIntent().getStringExtra(LOGIN_REQUEST_SOURCE);
 
@@ -140,7 +140,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     @OnClick(R.id.forgot_password_link) void onForgotPasswordClick() {
-        PageTitle title = new PageTitle("Special:PasswordReset", WikipediaApp.getInstance().getWikiSite());
+        PageTitle title = new PageTitle("Special:PasswordReset", WikipediaApp.instance.getWikiSite());
         visitInExternalBrowser(this, Uri.parse(title.getMobileUri()));
     }
 
@@ -213,10 +213,10 @@ public class LoginActivity extends BaseActivity {
         progressDialog.show();
 
         if (!twoFactorCode.isEmpty()) {
-            loginClient.login(WikipediaApp.getInstance().getWikiSite(), username, password,
+            loginClient.login(WikipediaApp.instance.getWikiSite(), username, password,
                     twoFactorCode, firstStepToken, getCallback());
         } else {
-            loginClient.request(WikipediaApp.getInstance().getWikiSite(), username, password,
+            loginClient.request(WikipediaApp.instance.getWikiSite(), username, password,
                     getCallback());
         }
     }

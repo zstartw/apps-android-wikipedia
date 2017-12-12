@@ -102,8 +102,8 @@ class ToCHandler {
         tocList.addHeaderView(headerView);
 
         // create a dummy funnel, in case the drawer is pulled out before a page is loaded.
-        funnel = new ToCInteractionFunnel(WikipediaApp.getInstance(),
-                WikipediaApp.getInstance().getWikiSite(), 0, 0);
+        funnel = new ToCInteractionFunnel(WikipediaApp.instance,
+                WikipediaApp.instance.getWikiSite(), 0, 0);
 
         slidingPane.addDrawerListener(new DrawerListener()); // todo: remove what was added
     }
@@ -154,7 +154,7 @@ class ToCHandler {
             }
         });
 
-        funnel = new ToCInteractionFunnel(WikipediaApp.getInstance(), wiki,
+        funnel = new ToCInteractionFunnel(WikipediaApp.instance, wiki,
                 page.getPageProperties().getPageId(), tocList.getAdapter().getCount());
 
         if (onboardingEnabled() && !page.isMainPage() && !firstPage) {

@@ -26,12 +26,12 @@ public enum NavTab implements EnumCode {
     },
     HISTORY(R.string.nav_item_history, R.drawable.ic_restore_black_24dp) {
         @NonNull @Override public Fragment newInstance() {
-            return HistoryFragment.newInstance();
+            return HistoryFragment.Companion.newInstance();
         }
     },
     NEARBY(R.string.nav_item_nearby, R.drawable.ic_explore_black_24dp) {
         @NonNull @Override public Fragment newInstance() {
-            return NearbyFragment.newInstance();
+            return NearbyFragment.Companion.newInstance();
         }
     };
 

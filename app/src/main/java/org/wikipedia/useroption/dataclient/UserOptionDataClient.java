@@ -116,7 +116,7 @@ public class UserOptionDataClient {
     }
 
     private static WikipediaApp app() {
-        return WikipediaApp.getInstance();
+        return WikipediaApp.instance;
     }
 
     private class TokenCallback implements CsrfTokenClient.Callback {

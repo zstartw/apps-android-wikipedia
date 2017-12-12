@@ -37,7 +37,7 @@ public class ThemeFittingRoomFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
 
         busMethods = new EventBusMethods();
-        WikipediaApp.getInstance().getBus().register(busMethods);
+        WikipediaApp.instance.getBus().register(busMethods);
 
         testImage.loadImage(R.drawable.wikipedia_globe_263dp);
         updateTextSize();
@@ -46,7 +46,7 @@ public class ThemeFittingRoomFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
-        WikipediaApp.getInstance().getBus().unregister(busMethods);
+        WikipediaApp.instance.getBus().unregister(busMethods);
         unbinder.unbind();
         unbinder = null;
         super.onDestroyView();
@@ -54,7 +54,7 @@ public class ThemeFittingRoomFragment extends Fragment {
 
     private void updateTextSize() {
         final float titleMultiplier = 1.6f;
-        float fontSize = WikipediaApp.getInstance().getFontSize(getActivity().getWindow());
+        float fontSize = WikipediaApp.instance.getFontSize(getActivity().getWindow());
         testText.setTextSize(fontSize);
         testTitle.setTextSize(fontSize * titleMultiplier);
     }
@@ -63,7 +63,7 @@ public class ThemeFittingRoomFragment extends Fragment {
         @Subscribe
         public void on(ChangeTextSizeEvent event) {
             updateTextSize();
-            testText.post(() -> WikipediaApp.getInstance().getBus().post(new WebViewInvalidateEvent()));
+            testText.post(() -> WikipediaApp.instance.getBus().post(new WebViewInvalidateEvent()));
         }
     }
 }

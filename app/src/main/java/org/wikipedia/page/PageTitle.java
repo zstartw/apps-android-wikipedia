@@ -162,7 +162,7 @@ public class PageTitle implements Parcelable {
             wiki = new WikiSite(json.optString("site"), json.optString("languageCode"));
         } else {
             L.logRemoteErrorIfProd(new RemoteLogException("wiki is null").put("json", json.toString()));
-            wiki = WikipediaApp.getInstance().getWikiSite();
+            wiki = WikipediaApp.instance.getWikiSite();
         }
         this.properties = json.has("properties") ? new PageProperties(json.optJSONObject("properties")) : null;
         this.thumbUrl = json.optString("thumbUrl", null);

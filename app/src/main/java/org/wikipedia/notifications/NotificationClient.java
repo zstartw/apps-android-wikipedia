@@ -40,7 +40,7 @@ public final class NotificationClient {
 
     private NotificationClient(@NonNull WikiSite wiki) {
         service = RetrofitFactory.newInstance(wiki).create(Service.class);
-        editTokenClient = new CsrfTokenClient(wiki, WikipediaApp.getInstance().getWikiSite());
+        editTokenClient = new CsrfTokenClient(wiki, WikipediaApp.instance.getWikiSite());
     }
 
     @VisibleForTesting static class CallbackAdapter implements retrofit2.Callback<MwQueryResponse> {

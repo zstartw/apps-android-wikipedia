@@ -36,7 +36,7 @@ class DisambigListAdapter extends ArrayAdapter<DisambigResult> {
     private static final int MAX_CACHE_SIZE_IMAGES = 24;
     @NonNull private final LruCache<String, String> pageImagesCache = new LruCache<>(MAX_CACHE_SIZE_IMAGES);
     private final DisambigResult[] items;
-    private final WikiSite wiki = WikipediaApp.getInstance().getWikiSite();
+    private final WikiSite wiki = WikipediaApp.instance.getWikiSite();
 
     DisambigListAdapter(@NonNull Context context, @NonNull DisambigResult[] items) {
         super(context, 0, items);

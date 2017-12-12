@@ -22,7 +22,7 @@ public final class GradientUtil {
     public static Drawable getPowerGradient(@ColorRes int baseColor, int gravity) {
         PaintDrawable drawable = new PaintDrawable();
         drawable.setShape(new RectShape());
-        setPowerGradient(drawable, ContextCompat.getColor(WikipediaApp.getInstance(), baseColor), gravity);
+        setPowerGradient(drawable, ContextCompat.getColor(WikipediaApp.instance, baseColor), gravity);
         return drawable;
     }
 

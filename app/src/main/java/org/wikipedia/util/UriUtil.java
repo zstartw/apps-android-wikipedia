@@ -94,7 +94,7 @@ public final class UriUtil {
      * @return A fully qualified, protocol specified URL
      */
     @NonNull public static String resolveProtocolRelativeUrl(@NonNull String url) {
-        return (url.startsWith("//") ? WikipediaApp.getInstance().getWikiSite().scheme() + ":" + url
+        return (url.startsWith("//") ? WikipediaApp.instance.getWikiSite().scheme() + ":" + url
                 : url);
     }
 
@@ -117,7 +117,7 @@ public final class UriUtil {
     }
 
     public static void handleExternalLink(final Context context, final Uri uri) {
-        final WikipediaZeroHandler zeroHandler = WikipediaApp.getInstance()
+        final WikipediaZeroHandler zeroHandler = WikipediaApp.instance
                 .getWikipediaZeroHandler();
 
         if (!zeroHandler.isZeroEnabled()) {

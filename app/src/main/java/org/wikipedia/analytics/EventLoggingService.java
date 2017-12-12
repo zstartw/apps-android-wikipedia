@@ -26,7 +26,7 @@ public final class EventLoggingService {
 
     private static EventLoggingService INSTANCE = new EventLoggingService();
 
-    public static EventLoggingService getInstance() {
+    public static EventLoggingService getInstance(){
         return INSTANCE;
     }
 

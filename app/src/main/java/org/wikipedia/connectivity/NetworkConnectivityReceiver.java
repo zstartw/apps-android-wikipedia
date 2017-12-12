@@ -31,6 +31,6 @@ public class NetworkConnectivityReceiver extends BroadcastReceiver {
     }
 
     private void post(@NonNull Object event) {
-        WikipediaApp.getInstance().getBus().post(event);
+        WikipediaApp.instance.getBus().post(event);
     }
 }

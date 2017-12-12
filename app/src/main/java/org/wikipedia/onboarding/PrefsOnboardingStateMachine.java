@@ -10,7 +10,7 @@ public final class PrefsOnboardingStateMachine implements OnboardingStateMachine
 
     private long millisSinceLastTutorial;
 
-    public static PrefsOnboardingStateMachine getInstance() {
+    public static PrefsOnboardingStateMachine getInstance(){
         return INSTANCE;
     }
 

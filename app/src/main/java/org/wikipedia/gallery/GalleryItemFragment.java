@@ -68,7 +68,7 @@ public class GalleryItemFragment extends Fragment {
     private View videoPlayButton;
     private MediaController mediaController;
 
-    @NonNull private WikipediaApp app = WikipediaApp.getInstance();
+    @NonNull private WikipediaApp app = WikipediaApp.instance;
     @Nullable private GalleryActivity parentActivity;
     @Nullable private PageTitle pageTitle;
     @SuppressWarnings("NullableProblems") @NonNull private PageTitle imageTitle;

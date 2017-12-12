@@ -88,7 +88,7 @@ public class FeedFragment extends Fragment implements BackPressedHandler {
         void onFeedDownloadImage(FeaturedImage image);
         void onFeaturedImageSelected(FeaturedImageCard card);
         void onLoginRequested();
-        @NonNull View getOverflowMenuAnchor();
+        View getOverflowMenuAnchor();
         void updateToolbarElevation(boolean elevate);
     }
 
@@ -101,7 +101,7 @@ public class FeedFragment extends Fragment implements BackPressedHandler {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        app = WikipediaApp.getInstance();
+        app = WikipediaApp.instance;
         coordinator = new FeedCoordinator(app);
         coordinator.more(app.getWikiSite());
         funnel = new FeedFunnel(app);
@@ -571,7 +571,7 @@ public class FeedFragment extends Fragment implements BackPressedHandler {
             UriUtil.visitInExternalBrowser(getContext(),
                     Uri.parse(String.format(getString(R.string.donate_url),
                             BuildConfig.VERSION_NAME,
-                            WikipediaApp.getInstance().getSystemLanguageCode())));
+                            WikipediaApp.instance.getSystemLanguageCode())));
         }
 
         @Override
@@ -581,7 +581,7 @@ public class FeedFragment extends Fragment implements BackPressedHandler {
 
         @Override
         public void logoutClick() {
-            WikipediaApp.getInstance().logOut();
+            WikipediaApp.instance.logOut();
             FeedbackUtil.showMessage(FeedFragment.this, R.string.toast_logout_complete);
         }
 

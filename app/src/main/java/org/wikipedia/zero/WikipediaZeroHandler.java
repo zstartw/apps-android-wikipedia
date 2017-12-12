@@ -79,7 +79,7 @@ public class WikipediaZeroHandler {
 
     public static void showZeroExitInterstitialDialog(@NonNull final Context context,
                                                       @NonNull final Uri uri) {
-        final WikipediaZeroHandler zeroHandler = WikipediaApp.getInstance()
+        final WikipediaZeroHandler zeroHandler = WikipediaApp.instance
                 .getWikipediaZeroHandler();
 
         final ZeroConfig zeroConfig = zeroHandler.getZeroConfig();

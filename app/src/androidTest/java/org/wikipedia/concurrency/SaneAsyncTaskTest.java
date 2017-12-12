@@ -122,7 +122,7 @@ public class SaneAsyncTaskTest {
     }
 
     @NonNull private Thread uiThread() {
-        return WikipediaApp.getInstance().getMainLooper().getThread();
+        return WikipediaApp.instance.getMainLooper().getThread();
     }
 
     private void runOnMainSync(Runnable runnable) {

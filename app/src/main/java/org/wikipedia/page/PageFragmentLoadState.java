@@ -110,7 +110,7 @@ public class PageFragmentLoadState {
     private CommunicationBridge bridge;
     private ObservableWebView webView;
     private SwipeRefreshLayoutWithScroll refreshView;
-    private WikipediaApp app = WikipediaApp.getInstance();
+    private WikipediaApp app = WikipediaApp.instance;
     private LeadImagesHandler leadImagesHandler;
     private EditHandler editHandler;
 

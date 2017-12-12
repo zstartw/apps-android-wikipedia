@@ -122,7 +122,7 @@ public class OnThisDayFragment extends Fragment {
     private void updateContents(int age) {
         Calendar today = DateUtil.getDefaultDateFor(age);
         requestEvents(today.get(Calendar.MONTH), today.get(Calendar.DATE));
-        funnel = new OnThisDayFunnel(WikipediaApp.getInstance(), WikipediaApp.getInstance().getWikiSite(),
+        funnel = new OnThisDayFunnel(WikipediaApp.instance, WikipediaApp.instance.getWikiSite(),
                 getActivity().getIntent().getIntExtra(OnThisDayActivity.INVOKE_SOURCE_EXTRA, 0));
     }
 
@@ -131,7 +131,7 @@ public class OnThisDayFragment extends Fragment {
         eventsRecycler.setVisibility(View.GONE);
         errorView.setVisibility(View.GONE);
 
-        new OnThisDayFullListClient().request(WikipediaApp.getInstance().getWikiSite(), month + 1, date).enqueue(new Callback<OnThisDay>() {
+        new OnThisDayFullListClient().request(WikipediaApp.instance.getWikiSite(), month + 1, date).enqueue(new Callback<OnThisDay>() {
             @Override
             public void onResponse(@NonNull Call<OnThisDay> call, @NonNull Response<OnThisDay> response) {
                 if (!isAdded()) {
@@ -144,7 +144,7 @@ public class OnThisDayFragment extends Fragment {
                 onThisDay = response.body();
                 progressBar.setVisibility(View.GONE);
                 eventsRecycler.setVisibility(View.VISIBLE);
-                eventsRecycler.setAdapter(new RecyclerAdapter(onThisDay.events(), WikipediaApp.getInstance().getWikiSite()));
+                eventsRecycler.setAdapter(new RecyclerAdapter(onThisDay.events(), WikipediaApp.instance.getWikiSite()));
                 List<OnThisDay.Event> events = onThisDay.events();
                 int beginningYear = events.get(events.size() - 1).year();
                 dayInfoTextView.setText(String.format(getString(R.string.events_count_text), Integer.toString(events.size()),

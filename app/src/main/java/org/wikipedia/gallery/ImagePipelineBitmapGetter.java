@@ -29,7 +29,7 @@ public abstract class ImagePipelineBitmapGetter {
     public abstract void onSuccess(@Nullable Bitmap bitmap);
 
     public void onError(Throwable t) {
-        Toast.makeText(WikipediaApp.getInstance(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(WikipediaApp.instance, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
     }
 
     public void get() {
@@ -37,7 +37,7 @@ public abstract class ImagePipelineBitmapGetter {
                 .build();
         ImagePipeline imagePipeline = Fresco.getImagePipeline();
         DataSource<CloseableReference<CloseableImage>> dataSource
-                = imagePipeline.fetchDecodedImage(request, WikipediaApp.getInstance());
+                = imagePipeline.fetchDecodedImage(request, WikipediaApp.instance);
         dataSource.subscribe(new BitmapDataSubscriber(), UiThreadImmediateExecutorService.getInstance());
     }
 

@@ -86,7 +86,7 @@ public abstract class OkHttpWebViewClient extends WebViewClient {
         return OkHttpConnectionFactory.getClient().newCall(new Request.Builder()
                 .url(url)
                 // TODO: Find a common way to set this header between here and RetrofitFactory.
-                .header("Accept-Language", WikipediaApp.getInstance().getAcceptLanguage(getWikiSite()))
+                .header("Accept-Language", WikipediaApp.instance.getAcceptLanguage(getWikiSite()))
                 .build())
                 .execute();
     }

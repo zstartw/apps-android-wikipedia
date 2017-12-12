@@ -39,10 +39,10 @@ public class FeedView extends AutoFitRecyclerView {
     }
 
     public void setCallback(@Nullable ItemTouchHelperSwipeAdapter.Callback callback) {
-        if (itemTouchHelper != null) {
+        /*if (itemTouchHelper != null) {
             itemTouchHelper.attachToRecyclerView(new DummyView(getContext()));
             itemTouchHelper = null;
-        }
+        }*/
 
         if (callback != null) {
             itemTouchHelper = new ItemTouchHelper(new ItemTouchHelperSwipeAdapter(callback));

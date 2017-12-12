@@ -29,7 +29,7 @@ public class FeaturedArticleCard extends Card {
     @Override
     @NonNull
     public String title() {
-        return WikipediaApp.getInstance().getString(R.string.view_featured_article_card_title);
+        return WikipediaApp.instance.getString(R.string.view_featured_article_card_title);
     }
 
     @Override

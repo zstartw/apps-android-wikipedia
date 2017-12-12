@@ -77,7 +77,7 @@ public final class InstallReceiver extends BroadcastReceiver {
         // log the event only if at least one of the parameters is nonempty
         if (!TextUtils.isEmpty(refUrl) || !TextUtils.isEmpty(refCampaignId)
                 || !TextUtils.isEmpty(refCampaignInstallId)) {
-            InstallReferrerFunnel funnel = new InstallReferrerFunnel(WikipediaApp.getInstance());
+            InstallReferrerFunnel funnel = new InstallReferrerFunnel(WikipediaApp.instance);
             funnel.logInstall(refUrl, refCampaignId, refCampaignInstallId);
         }
         if (!TextUtils.isEmpty(refUrl) && ShareUtil.canOpenUrlInApp(ctx, refUrl)) {

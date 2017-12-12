@@ -77,7 +77,7 @@ public class ReadingListsFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        WikipediaApp.getInstance().getRefWatcher().watch(this);
+        WikipediaApp.instance.getRefWatcher().watch(this);
     }
 
     @Override
@@ -90,7 +90,7 @@ public class ReadingListsFragment extends Fragment {
         readingListView.setAdapter(adapter);
         readingListView.addItemDecoration(new DrawableItemDecoration(getContext(), R.attr.list_separator_drawable));
 
-        WikipediaApp.getInstance().getBus().register(eventBusMethods);
+        WikipediaApp.instance.getBus().register(eventBusMethods);
         updateLists();
 
         contentContainer.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
@@ -105,7 +105,7 @@ public class ReadingListsFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
-        WikipediaApp.getInstance().getBus().unregister(eventBusMethods);
+        WikipediaApp.instance.getBus().unregister(eventBusMethods);
         readingListView.setAdapter(null);
         unbinder.unbind();
         unbinder = null;

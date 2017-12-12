@@ -46,9 +46,9 @@ import static org.hamcrest.Matchers.is;
 
     private void testDefaultLocaleAndAcceptLanguageAgree(String expected,
              String appLanguage, Locale systemLocale, WikiSite wiki) {
-        WikipediaApp.getInstance().setAppLanguageCode(appLanguage);
+        WikipediaApp.instance.setAppLanguageCode(appLanguage);
         Locale.setDefault(systemLocale);
-        assertThat(expected, is(WikipediaApp.getInstance().getAcceptLanguage(wiki)));
+        assertThat(expected, is(WikipediaApp.instance.getAcceptLanguage(wiki)));
     }
 
     private void preserveAppState() {
@@ -62,11 +62,11 @@ import static org.hamcrest.Matchers.is;
     }
 
     private void preserveAppLanguage() {
-        appLanguage = WikipediaApp.getInstance().getAppLanguageCode();
+        appLanguage = WikipediaApp.instance.getAppLanguageCode();
     }
 
     private void restoreAppLanguage() {
-        WikipediaApp.getInstance().setAppLanguageCode(appLanguage);
+        WikipediaApp.instance.setAppLanguageCode(appLanguage);
     }
 
     private void preserveDefaultLocale() {

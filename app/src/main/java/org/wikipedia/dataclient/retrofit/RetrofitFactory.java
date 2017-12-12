@@ -42,7 +42,7 @@ public final class RetrofitFactory {
         public Response intercept(Interceptor.Chain chain) throws IOException {
             Request request = chain.request();
             request = request.newBuilder()
-                    .header("Accept-Language", WikipediaApp.getInstance().getAcceptLanguage(wiki))
+                    .header("Accept-Language", WikipediaApp.instance.getAcceptLanguage(wiki))
                     .build();
             return chain.proceed(request);
         }

@@ -22,7 +22,7 @@ class CompilationSearchTask extends SaneAsyncTask<List<Compilation>> {
     @Override
     public List<Compilation> performTask() throws Throwable {
         List<String> pathList = new ArrayList<>();
-        StorageManager sm = (StorageManager) WikipediaApp.getInstance().getSystemService(Context.STORAGE_SERVICE);
+        StorageManager sm = (StorageManager) WikipediaApp.instance.getSystemService(Context.STORAGE_SERVICE);
         try {
             String[] volumes = (String[]) sm.getClass().getMethod("getVolumePaths").invoke(sm);
             if (volumes != null && volumes.length > 0) {

@@ -370,7 +370,7 @@ public class RemoteCompilationsFragment extends DownloadObserverFragment {
                     case R.id.menu_compilation_download:
                         if (DeviceUtil.isOnline()) {
                             if (!getDownloadObserver().isDownloading(compilation)) {
-                                MediaDownloadReceiver.download(getContext(), compilation);
+                                MediaDownloadReceiver.Companion.download(getContext(), compilation);
                             }
                         } else {
                             FeedbackUtil.showMessage(getActivity(), R.string.offline_compilation_download_device_offline);

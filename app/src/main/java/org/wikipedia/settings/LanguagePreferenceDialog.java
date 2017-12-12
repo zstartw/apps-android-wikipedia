@@ -41,7 +41,7 @@ public class LanguagePreferenceDialog extends AppCompatDialog {
         super(context);
         setContentView(R.layout.dialog_preference_languages);
 
-        app = WikipediaApp.getInstance();
+        app = WikipediaApp.instance;
         languageCodes = app.getAppMruLanguageCodes();
         funnel = new AppLanguageSelectFunnel(initiatedFromSearchBar);
 

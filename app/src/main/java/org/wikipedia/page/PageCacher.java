@@ -31,7 +31,7 @@ public final class PageCacher {
 
     public static void loadIntoCache(@NonNull PageTitle title) {
         L.d("Loading page into cache: " + title.getPrefixedText());
-        WikipediaApp app = WikipediaApp.getInstance();
+        WikipediaApp app = WikipediaApp.instance;
         PageImageUrlParser parser = new PageImageUrlParser(new ImageTagParser(),
                 new PixelDensityDescriptorParser());
         PageClient client = PageClientFactory.create(title.getWikiSite(), title.namespace());
@@ -74,7 +74,7 @@ public final class PageCacher {
 
         @Override
         public void onResponse(@NonNull Call<PageLead> call, @NonNull Response<PageLead> response) {
-            WikipediaApp.getInstance().getSessionFunnel().leadSectionFetchEnd();
+            WikipediaApp.instance.getSessionFunnel().leadSectionFetchEnd();
             if (response.body() != null) {
                 // noinspection ConstantConditions
                 Set<String> imageUrls = new HashSet<>(parser.parse(response.body()));
@@ -100,7 +100,7 @@ public final class PageCacher {
         @Override
         public void onResponse(@NonNull Call<PageRemaining> call,
                                @NonNull Response<PageRemaining> response) {
-            WikipediaApp.getInstance().getSessionFunnel().restSectionsFetchEnd();
+            WikipediaApp.instance.getSessionFunnel().restSectionsFetchEnd();
             if (response.body() != null) {
                 // noinspection ConstantConditions
                 Set<String> imageUrls = new HashSet<>(parser.parse(response.body()));

@@ -92,8 +92,8 @@ public final class NotificationPresenter {
 
     private static Uri uriForPath(@NonNull Notification n, @NonNull String path) {
         return new Uri.Builder()
-                .scheme(WikipediaApp.getInstance().getWikiSite().scheme())
-                .authority(n.isFromWikidata() ? "m.wikidata.org" : WikipediaApp.getInstance().getWikiSite().mobileAuthority())
+                .scheme(WikipediaApp.instance.getWikiSite().scheme())
+                .authority(n.isFromWikidata() ? "m.wikidata.org" : WikipediaApp.instance.getWikiSite().mobileAuthority())
                 .appendPath("wiki")
                 .appendPath(path)
                 .build();

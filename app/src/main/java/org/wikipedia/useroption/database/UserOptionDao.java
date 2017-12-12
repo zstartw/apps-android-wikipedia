@@ -90,8 +90,8 @@ public final class UserOptionDao extends BaseDao<UserOption> {
     }
 
     private UserOptionDao() {
-        super(WikipediaApp.getInstance().getDatabaseClient(UserOption.class));
-        httpDao = new HttpRowDao<>(WikipediaApp.getInstance().getDatabaseClient(UserOptionRow.class));
+        super(WikipediaApp.instance.getDatabaseClient(UserOption.class));
+        httpDao = new HttpRowDao<>(WikipediaApp.instance.getDatabaseClient(UserOptionRow.class));
     }
 
     private static class Sql {

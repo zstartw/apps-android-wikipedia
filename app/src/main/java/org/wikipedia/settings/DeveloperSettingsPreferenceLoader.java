@@ -103,7 +103,7 @@ class DeveloperSettingsPreferenceLoader extends BasePreferenceLoader {
         findPreference(R.string.preference_key_remote_log)
                 .setOnPreferenceChangeListener((preference, newValue) -> {
                     L.logRemoteError(new RemoteLogException(newValue.toString()));
-                    WikipediaApp.getInstance().checkCrashes(getActivity());
+                    WikipediaApp.instance.checkCrashes(getActivity());
                     return true;
                 });
 
@@ -162,7 +162,7 @@ class DeveloperSettingsPreferenceLoader extends BasePreferenceLoader {
     }
 
     private void resetMediaWikiSettings() {
-        WikipediaApp.getInstance().resetWikiSite();
+        WikipediaApp.instance.resetWikiSite();
     }
 
     private void createTestReadingList(String title, int listSize) {
@@ -178,7 +178,7 @@ class DeveloperSettingsPreferenceLoader extends BasePreferenceLoader {
                 .build();
         ReadingList.DAO.addList(list);
         for (int i = 0; i < listSize; i++) {
-            PageTitle pageTitle = new PageTitle(title.contains("Test") ? "" + (i + 1) : "List" + title.charAt(title.length() - 1) + " Page" + (i + 1), WikipediaApp.getInstance().getWikiSite());
+            PageTitle pageTitle = new PageTitle(title.contains("Test") ? "" + (i + 1) : "List" + title.charAt(title.length() - 1) + " Page" + (i + 1), WikipediaApp.instance.getWikiSite());
             final ReadingListPage page = ReadingListDaoProxy.page(list, pageTitle);
             ReadingList.DAO.addTitleToList(list, page, false);
         }

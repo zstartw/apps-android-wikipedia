@@ -62,7 +62,7 @@ public class OnThisDayPagesViewHolder extends RecyclerView.ViewHolder {
     }
 
     @OnClick(R.id.parent) void onBaseViewClicked() {
-        Context context = WikipediaApp.getInstance().getApplicationContext();
+        Context context = WikipediaApp.instance.getApplicationContext();
         PageTitle pageTitle = new PageTitle(selectedPage.getTitle(), wiki);
         HistoryEntry entry = new HistoryEntry(pageTitle,
                 isSingleCard ? HistoryEntry.SOURCE_ON_THIS_DAY_CARD : HistoryEntry.SOURCE_ON_THIS_DAY_ACTIVITY);

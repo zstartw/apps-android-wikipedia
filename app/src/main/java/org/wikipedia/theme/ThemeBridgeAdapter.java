@@ -12,7 +12,7 @@ public final class ThemeBridgeAdapter {
     private static JSONObject getPayload() {
         JSONObject payload = new JSONObject();
         try {
-            payload.put("theme", WikipediaApp.getInstance().getCurrentTheme().getMarshallingId());
+            payload.put("theme", WikipediaApp.instance.getCurrentTheme().getMarshallingId());
             payload.put("dimImages", Prefs.shouldDimDarkModeImages());
         } catch (JSONException e) {
             throw new RuntimeException(e);

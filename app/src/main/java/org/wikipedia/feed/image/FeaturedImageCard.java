@@ -34,7 +34,7 @@ public class FeaturedImageCard extends Card {
     @Override
     @NonNull
     public String title() {
-        return WikipediaApp.getInstance().getString(R.string.view_featured_image_card_title);
+        return WikipediaApp.instance.getString(R.string.view_featured_image_card_title);
     }
 
     @Override

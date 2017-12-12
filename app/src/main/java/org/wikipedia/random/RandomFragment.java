@@ -66,7 +66,7 @@ public class RandomFragment extends Fragment {
 
         updateBackButton(0);
 
-        funnel = new RandomizerFunnel(WikipediaApp.getInstance(), WikipediaApp.getInstance().getWikiSite(),
+        funnel = new RandomizerFunnel(WikipediaApp.instance, WikipediaApp.instance.getWikiSite(),
                 getActivity().getIntent().getIntExtra(RandomActivity.INVOKE_SOURCE_EXTRA, 0));
         return view;
     }

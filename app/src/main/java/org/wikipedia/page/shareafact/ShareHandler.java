@@ -61,7 +61,7 @@ public class ShareHandler {
     @Nullable private ShareAFactFunnel funnel;
 
     private void createFunnel() {
-        WikipediaApp app = WikipediaApp.getInstance();
+        WikipediaApp app = WikipediaApp.instance;
         final Page page = fragment.getPage();
         final PageProperties pageProperties = page.getPageProperties();
         funnel = new ShareAFactFunnel(app, page.getTitle(), pageProperties.getPageId(),

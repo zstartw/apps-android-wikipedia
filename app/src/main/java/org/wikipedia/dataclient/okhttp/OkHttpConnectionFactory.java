@@ -21,10 +21,10 @@ import okhttp3.logging.HttpLoggingInterceptor;
 public final class OkHttpConnectionFactory {
     private static final String CACHE_DIR_NAME = "okhttp-cache";
     private static final long NET_CACHE_SIZE = 64 * 1024 * 1024;
-    @VisibleForTesting @NonNull public static final Cache NET_CACHE = new Cache(new File(WikipediaApp.getInstance().getCacheDir(),
+    @VisibleForTesting @NonNull public static final Cache NET_CACHE = new Cache(new File(WikipediaApp.instance.getCacheDir(),
             CACHE_DIR_NAME), NET_CACHE_SIZE);
     private static final long SAVED_PAGE_CACHE_SIZE = NET_CACHE_SIZE * 1024;
-    @NonNull public static final Cache SAVE_CACHE = new Cache(new File(WikipediaApp.getInstance().getFilesDir(),
+    @NonNull public static final Cache SAVE_CACHE = new Cache(new File(WikipediaApp.instance.getFilesDir(),
             CACHE_DIR_NAME), SAVED_PAGE_CACHE_SIZE);
 
     @NonNull private static final OkHttpClient CLIENT = createClient();
@@ -50,7 +50,7 @@ public final class OkHttpConnectionFactory {
                 .addInterceptor(new DefaultMaxStaleRequestInterceptor())
                 .addInterceptor(new CacheControlRequestInterceptor())
                 .addInterceptor(new CacheDelegateInterceptor(CacheDelegate.internalCache(SAVE_CACHE), CacheDelegate.internalCache(NET_CACHE)))
-                .addInterceptor(new WikipediaZeroResponseInterceptor(WikipediaApp.getInstance().getWikipediaZeroHandler()))
+                .addInterceptor(new WikipediaZeroResponseInterceptor(WikipediaApp.instance.getWikipediaZeroHandler()))
                 .build();
     }
 

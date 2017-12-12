@@ -90,7 +90,7 @@ public class ReadingListTable extends DatabaseTable<ReadingListRow> {
             @Override public Void execute() throws Throwable {
                 // Completely remove any contents from the old "savedpages" directory, since they
                 // are now useless.
-                FileUtil.deleteRecursively(new File(WikipediaApp.getInstance().getFilesDir(), "savedpages"));
+                FileUtil.deleteRecursively(new File(WikipediaApp.instance.getFilesDir(), "savedpages"));
                 // Mark all reading list pages as outdated, so that they will be re-downloaded,
                 // and thus re-cached in our new style, along with the newly-added size information.
                 Cursor c = ReadingListPageDao.instance().allPages();

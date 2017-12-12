@@ -115,7 +115,7 @@ public class SavedPageSyncService extends JobIntentService {
     private void sendSyncEvent() {
         // Note: this method posts from a background thread but subscribers expect events to be
         // received on the main thread.
-        WikipediaApp.getInstance().getBus().post(new ReadingListSyncEvent());
+        WikipediaApp.instance.getBus().post(new ReadingListSyncEvent());
     }
 
     private void deleteRow(@NonNull ReadingListPageDiskRow row) {
@@ -321,7 +321,7 @@ public class SavedPageSyncService extends JobIntentService {
     }
 
     private void persistPageThumbnail(@NonNull PageTitle title, @NonNull String url) {
-        WikipediaApp.getInstance().getDatabaseClient(PageImage.class).upsert(
+        WikipediaApp.instance.getDatabaseClient(PageImage.class).upsert(
                 new PageImage(title, UriUtil.resolveProtocolRelativeUrl(title.getWikiSite(), url)),
                 PageImageHistoryContract.Image.SELECTION);
     }

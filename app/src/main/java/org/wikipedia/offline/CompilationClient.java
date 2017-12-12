@@ -109,6 +109,6 @@ class CompilationClient {
 
     @NonNull
     private static InputStream openAssetFile(String path) throws IOException {
-        return WikipediaApp.getInstance().getAssets().open(path);
+        return WikipediaApp.instance.getAssets().open(path);
     }
 }

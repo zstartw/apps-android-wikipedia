@@ -27,7 +27,7 @@ public class BecauseYouReadCard extends ListCard<BecauseYouReadItemCard> {
     @Override
     @NonNull
     public String title() {
-        return WikipediaApp.getInstance().getString(R.string.view_because_you_read_card_title);
+        return WikipediaApp.instance.getString(R.string.view_because_you_read_card_title);
     }
 
     @Override

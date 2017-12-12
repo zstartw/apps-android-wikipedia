@@ -53,7 +53,7 @@ public class MostReadListCard extends ListCard<MostReadItemCard> {
     }
 
     @NonNull private Context context() {
-        return WikipediaApp.getInstance();
+        return WikipediaApp.instance;
     }
 
     @Override

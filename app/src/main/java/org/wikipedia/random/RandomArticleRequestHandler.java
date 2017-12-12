@@ -20,10 +20,10 @@ public final class RandomArticleRequestHandler{
     }
 
     public static void getRandomPage(@NonNull final Callback cb) {
-        new RandomSummaryClient().request(WikipediaApp.getInstance().getWikiSite(), new RandomSummaryClient.Callback() {
+        new RandomSummaryClient().request(WikipediaApp.instance.getWikiSite(), new RandomSummaryClient.Callback() {
             @Override
             public void onSuccess(@NonNull Call<RbPageSummary> call, @NonNull RbPageSummary pageSummary) {
-                PageTitle title = new PageTitle(null, pageSummary.getTitle(), WikipediaApp.getInstance().getWikiSite());
+                PageTitle title = new PageTitle(null, pageSummary.getTitle(), WikipediaApp.instance.getWikiSite());
                 cb.onSuccess(title);
             }
 
@@ -41,7 +41,7 @@ public final class RandomArticleRequestHandler{
 
     private static void getRandomPageFromCompilation(@NonNull Callback cb) {
         try {
-            cb.onSuccess(new PageTitle(OfflineManager.instance().getRandomTitle(), WikipediaApp.getInstance().getWikiSite()));
+            cb.onSuccess(new PageTitle(OfflineManager.instance().getRandomTitle(), WikipediaApp.instance.getWikiSite()));
         } catch (Throwable t) {
             cb.onError(t);
         }

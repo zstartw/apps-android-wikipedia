@@ -66,7 +66,7 @@ public class LangLinksActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        app = WikipediaApp.getInstance();
+        app = WikipediaApp.instance;
         setStatusBarColor(ResourceUtil.getThemedAttributeId(this, R.attr.page_status_bar_color));
 
         setContentView(R.layout.activity_langlinks);

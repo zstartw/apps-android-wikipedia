@@ -51,7 +51,7 @@ public class FacePostprocessor extends BasePostprocessor {
             } catch (OutOfMemoryError e) {
                 L.logRemoteErrorIfProd(e);
             }
-            int defaultColor = ContextCompat.getColor(WikipediaApp.getInstance(), R.color.base30);
+            int defaultColor = ContextCompat.getColor(WikipediaApp.instance, R.color.base30);
             listener.get().onImageLoaded(destBitmap.getHeight(), facePos,
                     extractMainColor(colorPalette, defaultColor));
         } else {
@@ -116,7 +116,7 @@ public class FacePostprocessor extends BasePostprocessor {
         backgroundPaint.setColor(Color.WHITE);
         canvas.drawRect(0f, 0f, destBitmap.getWidth(), destBitmap.getHeight(), backgroundPaint);
         canvas.drawBitmap(sourceBitmap, 0f, 0f, backgroundPaint);
-        if (WikipediaApp.getInstance().getCurrentTheme().isDark() && Prefs.shouldDimDarkModeImages()) {
+        if (WikipediaApp.instance.getCurrentTheme().isDark() && Prefs.shouldDimDarkModeImages()) {
             // "dim" images by drawing a translucent black rectangle over them.
             final int blackAlpha = 100;
             backgroundPaint.setColor(Color.argb(blackAlpha, 0, 0, 0));

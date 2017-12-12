@@ -171,7 +171,7 @@ public class EditSectionActivity extends BaseActivity {
         updateEditLicenseText();
         editSummaryFragment.setTitle(title);
 
-        funnel = WikipediaApp.getInstance().getFunnelManager().getEditFunnel(title);
+        funnel = WikipediaApp.instance.getFunnelManager().getEditFunnel(title);
 
         // Only send the editing start log event if the activity is created for the first time
         if (savedInstanceState == null) {

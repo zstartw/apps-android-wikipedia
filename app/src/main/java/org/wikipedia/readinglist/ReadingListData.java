@@ -247,6 +247,6 @@ public final class ReadingListData {
     }
 
     private <T> DatabaseClient<T> client(Class<T> clazz) {
-        return WikipediaApp.getInstance().getDatabaseClient(clazz);
+        return WikipediaApp.instance.getDatabaseClient(clazz);
     }
 }

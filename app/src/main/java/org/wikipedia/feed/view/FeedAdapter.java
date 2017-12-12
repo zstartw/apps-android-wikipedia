@@ -20,6 +20,7 @@ import org.wikipedia.feed.offline.OfflineCardView;
 import org.wikipedia.feed.offline.OfflineCompilationCardView;
 import org.wikipedia.feed.random.RandomCardView;
 import org.wikipedia.feed.searchbar.SearchCardView;
+import org.wikipedia.util.log.L;
 import org.wikipedia.views.DefaultRecyclerAdapter;
 import org.wikipedia.views.DefaultViewHolder;
 import org.wikipedia.views.ItemTouchHelperSwipeAdapter;

@@ -96,7 +96,7 @@ public class LinkPreviewDialog extends ExtendedBottomSheetDialogFragment
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        WikipediaApp app = WikipediaApp.getInstance();
+        WikipediaApp app = WikipediaApp.instance;
         pageTitle = getArguments().getParcelable("title");
         entrySource = getArguments().getInt("entrySource");
         location = getArguments().getParcelable("location");

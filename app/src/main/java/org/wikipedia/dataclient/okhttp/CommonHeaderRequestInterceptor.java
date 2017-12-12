@@ -12,7 +12,7 @@ import static org.wikipedia.settings.Prefs.isEventLoggingEnabled;
 
 class CommonHeaderRequestInterceptor implements Interceptor {
     @Override public Response intercept(Chain chain) throws IOException {
-        WikipediaApp app = WikipediaApp.getInstance();
+        WikipediaApp app = WikipediaApp.instance;
         Request request = chain.request().newBuilder()
                 .header("User-Agent", app.getUserAgent())
                 .header(isEventLoggingEnabled() ? "X-WMF-UUID" : "DNT",

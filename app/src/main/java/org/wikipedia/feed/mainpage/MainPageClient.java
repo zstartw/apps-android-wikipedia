@@ -21,7 +21,7 @@ public class MainPageClient extends DummyClient {
 
     @NonNull
     public static PageTitle getMainPageTitle() {
-        WikipediaApp app = WikipediaApp.getInstance();
+        WikipediaApp app = WikipediaApp.instance;
         PageTitle title = new PageTitle(MainPageNameData
                 .valueFor(app.getAppOrSystemLanguageCode()), app.getWikiSite());
         if (OfflineManager.hasCompilation() && !DeviceUtil.isOnline()) {

@@ -69,7 +69,7 @@ public final class RbSwitch {
 
     @SuppressWarnings("checkstyle:magicnumber")
     private static boolean isAdmitted(@IntRange(from = 1, to = 100) int ticket, String configKey) {
-        @IntRange(from = 0, to = 100) int admittedPct = WikipediaApp.getInstance()
+        @IntRange(from = 0, to = 100) int admittedPct = WikipediaApp.instance
                 .getRemoteConfig().getConfig().optInt(configKey, 100); // 0 = disable
         return ticket <= admittedPct;
     }

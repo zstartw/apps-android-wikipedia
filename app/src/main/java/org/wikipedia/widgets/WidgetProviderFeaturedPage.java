@@ -73,7 +73,7 @@ public class WidgetProviderFeaturedPage extends AppWidgetProvider {
     }
 
     private void getMainPageLead(final Callback cb) {
-        WikipediaApp app = WikipediaApp.getInstance();
+        WikipediaApp app = WikipediaApp.instance;
         final PageTitle title = new PageTitle(
                 MainPageNameData.valueFor(app.getAppOrSystemLanguageCode()),
                 app.getWikiSite());
@@ -114,7 +114,7 @@ public class WidgetProviderFeaturedPage extends AppWidgetProvider {
                     || (text.getSpanEnd(span) - text.getSpanStart(span) <= 1)) {
                 continue;
             }
-            PageTitle title = WikipediaApp.getInstance().getWikiSite()
+            PageTitle title = WikipediaApp.instance.getWikiSite()
                     .titleForInternalLink(decodeURL(span.getURL()));
             if (!title.isFilePage() && !title.isSpecial()) {
                 titleText = title.getDisplayText();

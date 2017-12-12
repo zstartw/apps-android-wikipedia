@@ -28,7 +28,7 @@ public final class SharedPreferenceCookieManager extends CookieManager {
     private static SharedPreferenceCookieManager INSTANCE;
 
     @NonNull
-    public static SharedPreferenceCookieManager getInstance() {
+    public static SharedPreferenceCookieManager getInstance(){
         if (INSTANCE == null) {
             INSTANCE = new SharedPreferenceCookieManager();
         }
