@@ -1,7 +1,4 @@
 ### Wikipedia Android app
 
-This repository contains the source code for the official Wikipedia Android app.
+这个是项目Fork [wiki开源](https://github.com/wikimedia/apps-android-wikipedia),使用kotlin来修改,也算是练练手
 
-### Documentation
-
-All documentation is kept on [our wiki](https://www.mediawiki.org/wiki/Wikimedia_Apps/Team/Wikipedia_Android_app_hacking). Check it out!
